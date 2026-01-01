@@ -5,6 +5,7 @@ import categoryController from "./Controllers/CategoryControllers.js";
 import blogController from "./Controllers/BlogControllers.js";
 import blogCategoryController from "./Controllers/BlogCategoryController.js";
 import UniversityController from "./Controllers/UniversityController.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
 import cors from "cors";
 
 // Connect to DB
@@ -23,6 +24,7 @@ app.use("/api/category", categoryController);
 app.use("/api/blog", blogController);
 app.use("/api/blogCat", blogCategoryController);
 app.use("/api/uni", UniversityController);
+app.use("/api/tickets", ticketRoutes);
 
 // Start server
 app.listen(8000, () => {

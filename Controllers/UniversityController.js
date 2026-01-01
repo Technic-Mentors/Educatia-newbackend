@@ -64,7 +64,7 @@ router.get("/getuni", errorHandling(async (req, res) => {
 router.get("/getUniById/:id", errorHandling(async (req, res) => {
     const getUniById = await University.findById(req.params.id).
     if (!getUniById) 
-        return res.status(400).json({ message: "Job not found" })
+        return res.status(400).json({ message: "University not found" })
     res.json(getUniById)
 }))
   
