@@ -2,13 +2,13 @@ import Ticket from "../Modules/Tickets.js";
 import nodemailer from "nodemailer";
 
 /* =============== SMTP CONFIGURATION (Brevo) =============== */
-const transporter = nodemailer.createTransport({  // ← Correct: createTransport (no 'er')
+const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
   port: 587,
   secure: false, // Use STARTTLS
   auth: {
-    user: "9aaae0001@smtp-brevo.com", // Your Brevo account email
-    pass: "xsmtpsib-3c76b8b20a7410cd44ce69aedfca586554f05ed373a6d8f3a76f98fc68ad425e-Hkgv0QdQ52IPyj0j", // Your Brevo SMTP key
+    user: process.env.BREVO_SMTP_USER,     // ← From .env
+    pass: process.env.BREVO_SMTP_PASS,     // ← From .env
   },
 });
 
